@@ -1,8 +1,10 @@
 # Python program to print "Hello World!"
+# By taking passing argument value as "World!" in parameter name
 import typer
 
-# Function
-def main():
-	print(f"Hello World")
+
+# Function having parameter name
+def main(name):
+	print(f"Hello {name}")
 
 typer.run(main)
