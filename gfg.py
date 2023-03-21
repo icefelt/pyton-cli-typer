@@ -1,10 +1,11 @@
-# Python program to print "Hello World!"
-# By taking passing argument value as "World!" in parameter name
 import typer
 
+app = typer.Typer()
 
-# Function having parameter name
-def main(name):
-	print(f"Hello {name}")
+@app.command()
+def gfg(string: str = typer.Argument(..., help = """Prints input string""")):
+	"""Prints geeksforgeeks and input string"""
+	print("@geeksforgeeks")
+	print(string)
 
-typer.run(main)
+app()
