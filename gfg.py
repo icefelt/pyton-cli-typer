@@ -1,17 +1,19 @@
-# Python program to take multiple
-# inputs of different datatypes and print it
 import typer
 
-# Function with multiple parameters
-def details(display: bool, name: str, age: int,
-			marks: float, country: str = "United States"):
+app = typer.Typer()
+
+@app.command()
+# You can input a default value like
+# 'True' or 'False' instead of '...'
+# in typer.Option() below.
+def square(name,language: bool = typer.Option(
+..., prompt = "Do You Want to print the language"),
+		display: bool = False):
+	print("Scotty Wins!")
 	
-	print(f"Country: {country}")
 	if display == True:
-		print("Scotty Wins!")
-	print(f"Name: {name}")
-	print(f"Age: {age}")
-	print(f"Marks: {marks}")
+		print(name)
+	if language == True:
+		print("Python 3.6+")
 
-
-typer.run(details)
+app()
