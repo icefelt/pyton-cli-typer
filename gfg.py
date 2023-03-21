@@ -1,11 +1,17 @@
+# Python program to take multiple
+# inputs of different datatypes and print it
 import typer
 
-app = typer.Typer()
+# Function with multiple parameters
+def details(display: bool, name: str, age: int,
+			marks: float, country: str = "United States"):
+	
+	print(f"Country: {country}")
+	if display == True:
+		print("@geeksforgeeks")
+	print(f"Name: {name}")
+	print(f"Age: {age}")
+	print(f"Marks: {marks}")
 
-@app.command()
-def gfg(string: str = typer.Argument(..., help = """Prints input string""")):
-	"""Prints geeksforgeeks and input string"""
-	print("@geeksforgeeks")
-	print(string)
 
-app()
+typer.run(details)
