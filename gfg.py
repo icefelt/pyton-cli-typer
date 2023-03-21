@@ -8,7 +8,7 @@ def details(display: bool, name: str, age: int,
 	
 	print(f"Country: {country}")
 	if display == True:
-		print("@geeksforgeeks")
+		print("Scotty Wins!")
 	print(f"Name: {name}")
 	print(f"Age: {age}")
 	print(f"Marks: {marks}")
